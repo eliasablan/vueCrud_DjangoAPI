@@ -20,10 +20,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'imagekit',
 
-    'blog_api'
+    'blog_api',
+    'core'
 ]
 
-ROOT_URLCONF = 'principal.urls'
+ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
     {
@@ -43,7 +44,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'principal.wsgi.application'
+WSGI_APPLICATION = 'project.wsgi.application'
 
 LANGUAGE_CODE = 'en-us'
 
