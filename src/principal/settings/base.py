@@ -16,6 +16,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'imagekit',
+    'corsheaders',
+
+    'blog_api',
+    'core'
 ]
 
 ROOT_URLCONF = 'principal.urls'
@@ -66,3 +73,7 @@ STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(VENV_PATH, 'media')
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8080',
+)
