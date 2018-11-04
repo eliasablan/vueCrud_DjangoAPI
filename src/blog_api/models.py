@@ -41,14 +41,13 @@ class Post(models.Model):
     )
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='B', verbose_name="Estado")
     category = models.ForeignKey('Category', on_delete=models.SET_NULL, blank=True, null=True)
-    content = models.TextField(verbose_name="Contenido")
+    content = models.TextField(blank=True, verbose_name="Contenido")
 
-    DEFAULT_IMAGE = 'default_wallpaper.jpg'
-    image = models.ImageField(upload_to='posts', default=DEFAULT_IMAGE, verbose_name="Imagen Destacada")
+    image = models.ImageField(upload_to='posts', null=True, blank=True, verbose_name="Imagen Destacada")
     image_450 = ImageSpecField(source='image',
                                 processors=[ResizeToFill(450,450)],
                                 format='JPEG',
-                                options={'quality':60}
+                                options={'quality':60},
                                 )
 
     author = models.ForeignKey('Author', on_delete=models.SET_NULL, blank=True, null=True)
@@ -61,4 +60,16 @@ class Post(models.Model):
         verbose_name_plural = 'Publicaciones'
 
     def __str__(self):
-        return self.titulo
+        return self.title
+
+    def categoryName(self):
+        try:
+            return self.category.name
+        except:
+            return 'undefined'
+
+    def authorName(self):
+        try:
+            return self.author.name
+        except:
+            return 'undefined'

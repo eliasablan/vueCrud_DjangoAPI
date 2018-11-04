@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Author, Category, Post
+from django.db import models
 
 class AuthorSerializer(serializers.ModelSerializer):
 
@@ -15,6 +16,8 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class PostSerializer(serializers.ModelSerializer):
 
+    image_450 = serializers.ImageField(allow_empty_file=True, required=False)
+
     class Meta:
         model = Post
         fields = (
@@ -25,7 +28,10 @@ class PostSerializer(serializers.ModelSerializer):
                     'category',
                     'content',
                     'image',
+                    'image_450',
                     'author',
                     'created',
-                    'modified'
+                    'modified',
+                    'categoryName',
+                    'authorName',
                 )
