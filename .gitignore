@@ -90,7 +90,11 @@ celerybeat-schedule
 *.sage.py
 
 # Environments
+<<<<<<< HEAD
 # .env
+=======
+.env
+>>>>>>> 4d3e7066695c4bd96e9854c84af4be3898c6d75d
 .venv
 env/
 venv/
@@ -113,15 +117,24 @@ venv.bak/
 
 #########################################
 
+<<<<<<< HEAD
 JavaScript
+=======
+JS
+>>>>>>> 4d3e7066695c4bd96e9854c84af4be3898c6d75d
 
 .DS_Store
 node_modules
 /dist
 
 # local env files
+<<<<<<< HEAD
 # .env.local
 # .env.*.local
+=======
+.env.local
+.env.*.local
+>>>>>>> 4d3e7066695c4bd96e9854c84af4be3898c6d75d
 
 # Log files
 npm-debug.log*
