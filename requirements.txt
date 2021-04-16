@@ -1,7 +1,7 @@
 Django==2.1
 django-appconf==1.0.2
 django-cors-headers==2.4.0
-django-debug-toolbar==1.10.1
+django-debug-toolbar==1.11.1
 django-imagekit==4.0.2
 djangorestframework==3.9.0
 pilkit==2.0
